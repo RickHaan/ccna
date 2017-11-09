@@ -544,6 +544,42 @@ Global Unicast                    & %
 	This chapter is not yet complete!
 \end{textbox}
 
+\subsection{AAA}
+\paragraph{}
+AAA or triple A stands for, \textit{Authentication}, who is allowed to connect? \textit{Authorisation}, what are the allowed to do?
+and \textit{Accounting} what is done?
+\paragraph{}
+There are several ways to enable AAA on Cisco equipment. For simple environments a \textit{local database} can be used.
+While providing more security than a simple password it is not scalable accross mulitple pieces of equipment. To solve
+the scalbility issue, \textit{server based AAA} can be used. The Cisco course describes two different protocols, 
+\textit{RADIUS} and \textit{TACACS+}. They can be enabled on specific login interfaces or all login interfaces and be 
+used alongside eachother with prioritization. To provide failover capabilities, more than one server can be specified.
+In general \textit{server based Authentication} works as follows. The user tries to login on equipment, 
+the equipment verifies the login information with the server and the server responds with an allow or deny message.
+The communication between equipment and server makes use of an encrption key.
+There are serveral differences between the protocols, chosing a protocol depends on the situation.
+\begin{itemize}
+	\item TACACS+
+	\begin{itemize}
+		\item Seperates authentication and authorisation.
+		\item Encrypts all communication.
+		\item Uses TCP. 
+	\end{itemize}
+	\item RADIUS
+	\begin{itemize}
+		\item Authentication and authorisation as one process.
+		\item Only the password gets encrypted.
+		\item Uses UDP.
+		\item Provides support for remote acces technologies, 802.1x and session innitiation protocol(SIP). 
+	\end{itemize}
+\end{itemize}
+\paragraph{}
+Port based authentication is another subject touched on by AAA. It makes use of the 802.1x protocol and is used to restrict workstations.
+Workstations that are connected to a switchport with 802.1x need to set up an authorized connection to the switch.
+This is done by sending out an \textit{EAPOL-start} message to the switch. The switch verifies the workstation with the RADIUS server.
+Once verified, the workstation has an authorized conneciton and normal traffic can be transmitted on the connection. 
+To stop an authorized connection an \textit{EAPOL-logoff} message is send out.
+Without the authorized connection only \textit{EAPOL} messages can be send on the connection. 
 \rule{0.3\linewidth}{0.25pt}
 \scriptsize
 
