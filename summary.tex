@@ -189,37 +189,30 @@ If the host doesn't get an ACK back it will resend the message that have not bee
 eacht TCP header contains a \textit{sequence number} so the host can see which packets have been ACKed. This sequence number
 is also used too reorder the packages in the right order to sent it to the application layer.
 
-\subsubsection{UDP}
-\paragraph{}
-UDP is like TCP a protocol on the Internet layer, that is the only thing they have in common. UDP doesn't have knowledge of
+\subsubsection{User Datagram Procotol (UDP)}
+\paragraph{}UDP is like TCP a protocol on the Internet layer, that is the only thing they have in common. UDP doesn't have knowledge of
 connections or does anything to make sure the package is send and received. The advantage of UDP over TCP is that is doesn't
 have the overhead of TCP (retransmitting packages, keeping track of connections etc.).
 
-\subsubsection{IP (IPv4 only)}
-\paragraph{}
-This is the backbone of the internet, it allows hosts to connect to eachother. Routers uses IP addresses to route IP packets from
+\subsubsection{Internet Protocol (IPv4 only)}
+\paragraph{}This is the backbone of the internet, it allows hosts to connect to eachother. Routers uses IP addresses to route IP packets from
 network to network.
 
 \subsubsection{Ethernet}
-\paragraph{}
-Ethernet is a protocol at the Data link layer of the OSI model. It actually contains two layers:
-
-\begin{itemize}
-	\item \textbf{802.3 Media Access Layer (MAC)} The physical part of this layer.
-	\item  \textbf{802.2 Logical link Control (LLC)} The software part of this layer.
-\end{itemize}
-
-Ethernet does the following things on this layer:
-
-\begin{itemize}
-	\item \textbf{Collision Detection (CSMA/CD)} If a collision occurs it will sets a timer and wait for x amount of miliseconds.
-	\item \textbf{Encapsulation of the Network layer} Note that this encapsulation has a header and a trailer.
-	\item \textbf{Ethernet addressing} A unique address for a single device on a LAN network. Switches uses MAC addresses to switch
+\paragraph{}Ethernet is a protocol at the Data link layer of the OSI model. It actually contains two layers:
+\begin{description}
+	\item [802.3 Media Access Layer (MAC)] The physical part of this layer.
+	\item [802.2 Logical link Control (LLC)] The software part of this layer.
+\end{description}
+\paragraph{}Ethernet does the following things on this layer:
+\begin{description}
+	\item [Collision Detection (CSMA/CD)] If a collision occurs it will sets a timer and wait for x amount of miliseconds.
+	\item [Encapsulation of the Network layer] Note that this encapsulation has a header and a trailer.
+	\item [Ethernet addressing] A unique address for a single device on a LAN network. Switches uses MAC addresses to switch
 	packets between divices instead of IP addresses.
-\end{itemize}
+\end{description}
 
-\paragraph{}
-An ethernet address is 48 bits long. The first 24 bits are for the \textbf{Organizationally Unique Identifier (OUI)}, the last 24 bits
+\paragraph{}An ethernet address is 48 bits long. The first 24 bits are for the \textbf{Organizationally Unique Identifier (OUI)}, the last 24 bits
 is unique to that specific NIC.
 
 \subsection{IP Addressing and Subnets}
