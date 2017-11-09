@@ -168,9 +168,14 @@ RIP has the following characteristics:
 	\item Implements split horizon, route poisoning and holddown timers to prevent routing loops.
 	\item High convergence time.
 \end{itemize}
-\begin{textbox}{gray}{TODO}
-	This chapter is not yet complete!
-\end{textbox}
+\paragraph{}
+RIP uses 4 different timers:
+\begin{description}
+	\item[Router update timer] Interval between the routing table broadcasts.
+	\item[Router invalid timer] If a router does not head any updates about a route, it will consider that route as invalid.
+	\item[Holddown timer] When a route becomes invalid, it enters into holddown state. The route will remain in the routing table but the router will not accept any updates regaring this rout unless the metric is equal to or better than the existing metric.
+	\item[Router flush timer] While a route is in holddown state, the route is still in the routing table and will remain so for the duration specified by the flush timer.
+\end{description}
 
 \subsubsection{Enhanced Interior Gateway Routing Protocol (EIGRP)}
 \begin{textbox}{gray}{TODO}
@@ -200,17 +205,17 @@ As a matter of fact, no computer system in the world can be completely secure no
 Cisco IOS software running on Cisco routers has several built-in security tools that can be used as part of a good overall security strategy. Probably the most important security tool in Cisco IOS software are access control lists (ACL)
 
 \begin{description}
-	\item[C] Confidentiality - prevents acces to sensative information   
+	\item[C] Confidentiality - prevents acces to sensative information
 	\item[I] Integritiy - prevents unauthorized modification of data
 	\item[A] Availability  - prevents the loss of acces to information
 \end{description}
 
 In a medium to large enterprise, the typical secured network is built around a recipe of a perimeter router, a firewall device, and an internal router:
 \begin{description}
-	\item[Perimeter Router] is the border between enterprise resources and the public network (internet)  
+	\item[Perimeter Router] is the border between enterprise resources and the public network (internet)
 	\item[Firewall] Firewall allows sophisticated control of traffic flow.
-	\item[Internal Router]  provides addtional security by providing a point for further traffic control 
-	\item[DMZ] provides a buffer zone that seperates a trusted network from the untrusted network. 
+	\item[Internal Router]  provides addtional security by providing a point for further traffic control
+	\item[DMZ] provides a buffer zone that seperates a trusted network from the untrusted network.
 \end{description}
 
 Vulnerabilities, Threats and Exploits:
@@ -221,13 +226,13 @@ Vulnerabilities, Threats and Exploits:
 \end{description}
 
 \subsubsection{Type of Attacks}
-There are three major types of networks attacks 
+There are three major types of networks attacks
 \begin{itemize}
 	\item  Reconnaissance Attacks
 	\begin{itemize}
-		\item Information Lookup  
+		\item Information Lookup
 		\item Ping sweeps
-		\item Port scans 		
+		\item Port scans
 		\item Packet sniffer
 	\end{itemize}
 	\item  Access Attacks
@@ -240,18 +245,18 @@ There are three major types of networks attacks
 		\item Trust exploitation
 		\item Port redirection
 		\item Buffer overflows
-		\item Worms 
+		\item Worms
 		\item IP spoofing
 		\item ARP spoofing
 		\item Scareware
 		\item Adware
 	\item  Denial of Service
 		\item TCP SYN Attack
-		\item Smurf attack 
+		\item Smurf attack
 		\item Slowloris
 \end{itemize}
 \subsubsection{Counter measures}
-Physicial and Administrative security measures 
+Physicial and Administrative security measures
 \begin{itemize}
 	\item Locks
 	\item Biometric acces systems
@@ -261,7 +266,7 @@ Physicial and Administrative security measures
 	\item Racks
 	\item UPS
 	\item Positive air-flow systems
-	\item Fire Suppresion systems 
+	\item Fire Suppresion systems
 \end{itemize}
 \subsubsection{Layer 2 Security}
 \begin{textbox}{gray}{TODO}
