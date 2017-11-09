@@ -393,9 +393,10 @@ Packet filtering works at Layer 3 and 4. The last statement of an ACL is always 
 A wildcard mask is a string of 32 binary digits used by the router to determine which bits of the address to examine for a match. Also note that an ACL mask is reversed meaning.
 example:
 \begin{itemize}
-	\item 255.255.255.255 == 0.0.0.0
-	\item 255.255.255.252 == 0.0.0.3
-	\item 255.255.255.248 == 0.0.0.7
+	\item \verb!255.255.255.255 == 0.0.0.0!
+	\item \verb!255.255.255.252 == 0.0.0.3!
+	\item \verb!255.255.255.248 == 0.0.0.7!
+\end{itemize}
 \paragraph{}
 Guide lines for creating ACL's:
 \begin{itemize}
