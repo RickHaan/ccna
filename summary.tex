@@ -340,6 +340,45 @@ Compared to EIGRP, OSPF is a more complex protocol. The features of OSPF are:
 	\item Minimizes updates betweens neighbors.
 	\item And many more features...
 \end{itemize}
+\paragraph{}
+The building blocks of OSPF.
+\begin{description}
+	\item[Router ID] Router ID is the IP address that will represent the router throughout the OSPF. The Highest ID will become the the Designated Router
+	\item[Links] Simply speaking a Link is a network to which a router interface belongs.
+	\item[Hello Packets] Similar to EIGRP hello packets, OSPF uses hello packets to discover neighbors and maintain relationships 
+	\item[Neighbors]  Neighbors is the term used to define two or more OSPF speaking routers connected to the same network and configured to be in the same OSPF area
+	\item[Area] An OSPF area is a grouping of networks and routers. Every router in the area shares the same area id. Routers can belong to multiple areas; therefore, area id is linked to every interface
+	\item[Designated Router] All routers in these networks, form adjacencies only with the DR and BDR
+	\item[Link State Advertisements] Link State Advertisements (LSAs) are OSPF packets containing link-state and routing information
+	\item[Area Border Routers] Routers that connect an area to area 0 are called ABRs. They have one interface belonging to area 0 and other interfaces belonging to one or more areas
+	\item[Autonomous System Boundary Router (ASBR)] A router that connects an OSPF AS to another OSPF AS or AS belonging to other routing protocols is called an Autonomous System Boundary Router or ASBR.
+\end{description}
+\paragraph{}
+Loopback interfaces are virtual, logical interfaces that exist in the software only. They are used for administrative purposes such as providing a stable OSPF interface or diagnostics. Using loopback interfaces with OSPF has the following benefits.
+\begin{itemize}
+    \item Provides an interface that is always active.
+    \item Provides an OSPF Router ID that is predictable and always same. Making is easier to troubleshoot OSPF.
+    \item Router ID is a differentiator in DR/BDR election. Having a loopback interface with higher order IP address can influence the election.
+\end{itemize}
+\paragraph{}
+The formula to calculate how many adjacencies required is: n (n – 1) / 2  where N is router. So 4 routers is 4(4-1) / 2 = 6 adjacencies. 
+\paragraph{}
+DRs and BDRs are an important part of OSPF and usually determine how well OSPF will function. Problem in a Multiacces Network 
+\begin{itemize}
+	\item Creation of multiple adcencies
+	\item Extensive flooding of LSA
+\end{itemize}
+\paragraph{}
+Electrion process:
+note: The DR and BDR election process takes place as soon as the first router with an OSPF-enabled interface is active on the multiacces
+\begin{itemize}
+	\item The router with the highest interface priority/highest router ID is elected to be the DR (interface priority of 0 can never be a DR)
+	\item Router ID can be manually configred/Highest loopback IP addres / highest active IPv4 
+	\item OSPF DR and BDR elections are not preemptive. If a new router with a higher priority or higher router ID is added to the network after the DR and BDR election, the newly added router does not take over the DR or the BDR role
+	\item If the DR fails, the BDR is automatically promoted to DR, a new BDR will be elected after that
+\end{itemize}
+\paragraph{}
+The Hello Packet default setting 10 seconds and the deadtime is 4 times the hello packet interval (40 sec)
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
