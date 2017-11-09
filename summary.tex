@@ -1,0 +1,123 @@
+\documentclass[10pt,landscape]{article}
+\usepackage{multicol}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage[a4paper,landscape]{geometry}
+\usepackage{hyperref}
+\usepackage{tcolorbox}
+
+% This sets page margins to .5 inch if using letter paper, and to 1cm
+% if using A4 paper. (This probably isn't strictly necessary.)
+% If using another size paper, use default 1cm margins.
+\ifthenelse{\lengthtest { \paperwidth = 11in}}
+	{ \geometry{top=.5in,left=.5in,right=.5in,bottom=.5in} }
+	{\ifthenelse{ \lengthtest{ \paperwidth = 297mm}}
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+		{\geometry{top=1cm,left=1cm,right=1cm,bottom=1cm} }
+	}
+
+% Turn off header and footer
+\pagestyle{empty}
+
+
+% Redefine section commands to use less space
+\makeatletter
+\renewcommand{\section}{\@startsection{section}{1}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%x
+                                {\normalfont\large\bfseries}}
+\renewcommand{\subsection}{\@startsection{subsection}{2}{0mm}%
+                                {-1explus -.5ex minus -.2ex}%
+                                {0.5ex plus .2ex}%
+                                {\normalfont\normalsize\bfseries}}
+\renewcommand{\subsubsection}{\@startsection{subsubsection}{3}{0mm}%
+                                {-1ex plus -.5ex minus -.2ex}%
+                                {1ex plus .2ex}%
+                                {\normalfont\small\bfseries}}
+\makeatother
+
+% Define BibTeX command
+\def\BibTeX{{\rm B\kern-.05em{\sc i\kern-.025em b}\kern-.08em
+    T\kern-.1667em\lower.7ex\hbox{E}\kern-.125emX}}
+
+% Don't print section numbers
+\setcounter{secnumdepth}{0}
+
+
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0pt plus 0.5ex}
+
+
+% Colored boxes
+% new tcolorbox environment
+% #1: tcolorbox options
+% #2: color
+% #3: box title
+\newtcolorbox{textbox}[3][]
+{
+  colframe = #2!25,
+  colback  = #2!10,
+  coltitle = #2!20!black,
+  title    = #3,
+  #1,
+}
+
+
+% -----------------------------------------------------------------------
+
+\begin{document}
+
+\raggedright
+\footnotesize
+\begin{multicols}{3}
+
+
+% multicol parameters
+% These lengths are set only within the two main columns
+%\setlength{\columnseprule}{0.25pt}
+\setlength{\premulticols}{1pt}
+\setlength{\postmulticols}{1pt}
+\setlength{\multicolsep}{1pt}
+\setlength{\columnsep}{2pt}
+
+\begin{center}
+     \Large{CCNA Summary} \\
+\end{center}
+
+\section{CCNA Routing \& Switching \textit{200-120}}
+
+\subsection{Understanding Networks and their Building Blocks}
+
+\subsection{IP Addressing and Subnets}
+
+\subsection{Introduction to Cisco Routers, Switches and IOS}
+
+\subsection{Introduction to IP Routing}
+
+\subsection{Routing Protocols}
+
+\subsection{Switching and Spanning Tree Protocol}
+
+\subsection{VLANs and VTP}
+
+\subsection{Network Security}
+
+\subsection{Access Lists}
+
+\subsection{Network Address Translation (NAT)}
+
+\subsection{Wide Area Networks}
+
+\subsection{Virtual Private Networks}
+
+\subsection{IPv6}
+
+\subsection{IP Services}
+
+\rule{0.3\linewidth}{0.25pt}
+\scriptsize
+
+\href{https://github.com/roaldnefs/ccna}{https://github.com/roaldnefs/ccna}
+
+\end{multicols}
+\end{document}
