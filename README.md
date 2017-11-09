@@ -5,6 +5,7 @@ This is a CCNA Summary which is geared toward practical usage. Feel free to crea
 PNG images of the CCNA summary:
 
 ![](summary-thumb-0.png)
+![](summary-thumb-1.png)
 
 
 ## Download
