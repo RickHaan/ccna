@@ -214,7 +214,6 @@ network to network.
 
 \paragraph{}An ethernet address is 48 bits long. The first 24 bits are for the \textbf{Organizationally Unique Identifier (OUI)}, the last 24 bits
 is unique to that specific NIC.
-
 \subsection{IP Addressing and Subnets}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
@@ -224,12 +223,10 @@ is unique to that specific NIC.
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
-
 \subsection{Introduction to IP Routing}
 \paragraph{}
 In the simplest terms, IP Routing is the process of moving packets from its source to its destination across internetworks. To be able to route packets, a router must know at a minimum the following:
 \begin{itemize}
-
     \item Destination address
     \item Neighbor routers from which it can learn about remote networks
     \item Possible routes to all remote networks
@@ -253,6 +250,8 @@ In the simplest terms, IP Routing is the process of moving packets from its sour
 	\item[Destination network]The address of the remote network and how that network is connected
 	\item[Outgoing interface]  Identifies the exit interface to use when forwarding packets to the destination network
 \end{description}
+\paragraph{}
+For remote connected entries the RIB looks like this:  
 \paragraph{}For remote connected entries the RIB looks like this:
  \begin{description}
 	\item[Route Source] Identifies how the route was learned
@@ -261,11 +260,24 @@ In the simplest terms, IP Routing is the process of moving packets from its sour
 	\item[Metric] identifies the value assigne to reach the remote network. Lower values indicate preferred routes
 	\item[Outgoing interface]  Identifies the exit interface to use when forwarding packets to the destination network
 \end{description}
-
-\begin{textbox}{gray}{TODO}
-	This chapter is not yet complete!
-\end{textbox}
-
+\paragraph{}
+There are multiple Route Sources each letter has a different mean: 
+\begin{description}
+	\item[S] Static Route 
+	\item[D] Dynamically learned using EIGRP
+	\item[O] Dynamically learned using OSPF 
+	\item[R] Dynamically learned using RIP
+	\item[L] Identifies that this is a local route
+	\item[C] Identifies a directly connected network
+\end{description}
+\paragraph{}
+There are four types of static routes:
+\begin{description}
+	\item[Standard] Static Route are useful when connecting to a specific remote network  
+	\item[Default]  Static Route matches all packets and is used by the router if a package does not match a more specific route.
+	\item[Summary] Static Route to reduce the number of routing table entries, multiple static routes can be summarized if network is contigious and all use the same exit interface or next-hop ip
+	\item[Floating] static routes are static routes that are used to provide a backup path to a primary static or dynamic route, in the event of a link failure.To accomplish this, the floating static route is configured with a higher administrative distance than the primary route.
+\end{description}
 \subsection{Routing Protocols}
 \subsubsection{RIPv1 \& RIPv2}
 \paragraph{}
