@@ -107,6 +107,24 @@
 \end{textbox}
 
 \subsection{Routing Protocols}
+\subsubsection{RIPv1 \& RIPv2}
+\paragraph{}
+RIP is a \textit{distance vector} protocol, the only widely used routing protocol that uses the distance vector protocol today.
+\paragraph{}
+RIPv1 was defined as a \textit{classful} protocol. Therefore it does not advertise subnet mask information and assumes the default subnest mask based on the class of the network.
+\paragraph{}
+When a router starts up, it will automatically add the connected networks to its routing table, denoting them with a \verb!C!.
+If RIP is enabled, the router broadcasts its routing table. Neighbouring routers router with RIP enabled will receive the broadcast update and add the routes to their own routing tables.
+Each RIP enabled router will broadcast its routing table this way, therefore the routing table will converge accross the network.
+\begin{textbox}{gray}{TODO}
+	This chapter is not yet complete!
+\end{textbox}
+
+\subsubsection{Enhanced Interior Gateway Routing Protocol (EIGRP)}
+\begin{textbox}{gray}{TODO}
+	This chapter is not yet complete!
+\end{textbox}
+\subsubsection{Open Shortest Path First (OSPF)}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
