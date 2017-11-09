@@ -171,10 +171,40 @@ There are thee types of IPv6 addresses:
 	\item[Anycast] Multiple interfaces, packets are send to one (\textit{nearest}).
 	\item[Multicast] Multiple interfaces, packets are send to all.
 \end{description}
-
 \begin{textbox}{green}{Key Concept}
 	IPv6 broadcast addresses are special case of multicast addresses.
 \end{textbox}
+\paragraph{}
+An IPv6 address is a 128-bit value, displayed as 8 groups of 4 hexadecimal digits.
+For example: \verb!2001:0DB8:0000:0000:0006:0600:300D:527B!.
+Leading zeros can be left out: \verb!2001:DB8:0:0:6:600:300D:527B!, one or more adjecent groups
+of 16 bit of zeros can be replaced with the \verb!::! symbol (\textit{once!}): \verb!2001:DB8::6:600:300D:527B!.
+\paragraph{}
+IPv6 provides tow similar options for unicast addressing:
+\begin{description}
+	\item[Global Unicast] Similar to public IPv4 addresses. These addresses are allocated by the IANA. Each company is assigned a unique IPv6 address block called a \textit{global routing prefix}. Global Unicast addresses make up the majority of IPv6 addresses.
+	\item[Unique Local] Similar to private IPv4 addresses. Can by used by when behind a IPv6 NAT and in networks that aren't connected to the internet.
+\end{description}
+\paragraph{}
+IPv6 addresses can be identified by the initial bits of the address:
+\begin{tabular}{@{}l@{}l@{}l@{}}
+\textit{Address Type} & \textit{Binary Prefix} & \textit{IPv6 Notation} \\
+Unspecified                       & %
+        \verb!000…0 (128 bits)!   & %
+        \verb!::/128!             \\
+Loopback                          & %
+        \verb!000…1 (128 bits)!   & %
+        \verb!::1/128!            \\
+Multicast                         & %
+        \verb!1111 1111!          & %
+        \verb!FF00::/8!           \\
+Link-Local Unicast                & %
+        \verb!1111 1110 10!       & %
+        \verb!FF80::/10!          \\
+Global Unicast                    & %
+        \textit{everthing else}   & %
+        \textit{everthing else}
+\end{tabular}
 
 \subsubsection{IPv6 Address Configuration}
 \begin{textbox}{gray}{TODO}
