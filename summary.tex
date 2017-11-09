@@ -296,16 +296,16 @@ There are 5 types of VLAN:
 	\item[Voice VLAN] A separate VLAN is needed to support Voice over IP (VoIP). Needs: Assured bandwidth, Transmission,
 \end{description}
 \paragraph{}
-VLAN's wouldnt be useful without trunks. A VLAN trunk extends VLANs across an entire network. Cisco supports IEEE 802.1Q for coordinating trunks on Fast Ethernet, Gigabit Ethernet, and 10-Gigabit Ethernet interfaces. 
-\textit{switchport access vlan 10 } assigns a VLAN to an interface port. 
+VLAN's wouldnt be useful without trunks. A VLAN trunk extends VLANs across an entire network. Cisco supports IEEE 802.1Q for coordinating trunks on Fast Ethernet, Gigabit Ethernet, and 10-Gigabit Ethernet interfaces.
+\textit{switchport access vlan 10 } assigns a VLAN to an interface port.
 
 \subsection{VLAN Routing}
 \paragraph{}
-Without a router VLAN cannot be routed through the network regardless of the device used, the process of forwarding network traffic from one VLAN to another VLAN using routing is known as inter-VLAN routing. There are three types. 
+Without a router VLAN cannot be routed through the network regardless of the device used, the process of forwarding network traffic from one VLAN to another VLAN using routing is known as inter-VLAN routing. There are three types.
 \begin{description}
-	\item[Legacy Inter-VLAN routing] performed by using different physical router interfaces to different physical switch ports. Needs a cable for each VLAN. switch port must be in acces mode  
-	\item[Router-on-a-stick] ‘Router-on-a-stick’ is a type of router configuration in which a single physical interface routes traffic between multiple VLANs on a network. Makes use of subinterfaces. switch interface must be in trunk mode.  
-	\item[Layer 3 switching using SVIs] Is out of scope for CCNA 
+	\item[Legacy Inter-VLAN routing] performed by using different physical router interfaces to different physical switch ports. Needs a cable for each VLAN. switch port must be in acces mode
+	\item[Router-on-a-stick] ‘Router-on-a-stick’ is a type of router configuration in which a single physical interface routes traffic between multiple VLANs on a network. Makes use of subinterfaces. switch interface must be in trunk mode.
+	\item[Layer 3 switching using SVIs] Is out of scope for CCNA
 \end{description}
 
 \subsection{Network Security}
@@ -373,7 +373,7 @@ There are three Secure MAC Address Types
 
 \subsection{Access Lists}
 \paragraph{}
-An ACL is a series of IOS commands that control whether a router forwards or drops packets based on information 
+An ACL is a series of IOS commands that control whether a router forwards or drops packets based on information
 when configured, ACL perform the following tasks
 \begin{itemize}
 	\item Limit network traffic to increase network performance
@@ -381,7 +381,7 @@ when configured, ACL perform the following tasks
 	\item provide a basic level of security for network acces
 	\item provide a basic level of security for network
 	\item filter traffic
-	\item Screen hosts to permit or deny acces 
+	\item Screen hosts to permit or deny acces
 \end{itemize}
 \paragraph{}
 Packet filtering works at Layer 3 and 4. The last statement of an ACL is always an implicit deny. This statement is automatically inserted at the end of each ACL even though it is not physically present. ACLs can be configured to apply to inbound traffic and outbound traffic.
@@ -390,30 +390,31 @@ Packet filtering works at Layer 3 and 4. The last statement of an ACL is always 
 	\item[Outbound ACL] incoming packets are routed to the outbound interface, and then they are processed through the outbound ACL
 \end{description}
 \paragraph{}
-A wildcard mask is a string of 32 binary digits used by the router to determine which bits of the address to examine for a match. Also note that an ACL mask is reversed meaning. 
+A wildcard mask is a string of 32 binary digits used by the router to determine which bits of the address to examine for a match. Also note that an ACL mask is reversed meaning.
 example:
 \begin{itemize}
-	\item 255.255.255.255 == 0.0.0.0	
+	\item 255.255.255.255 == 0.0.0.0
 	\item 255.255.255.252 == 0.0.0.3
 	\item 255.255.255.248 == 0.0.0.7
 \paragraph{}
 Guide lines for creating ACL's:
 \begin{itemize}
-	\item Use ACL in Firewalls between your internal network 
+	\item Use ACL in Firewalls between your internal network
 	\item Use ACL on a router positioned between two part of your network
 	\item Use ACL on border routers, that is, routers situated at the edges of your networks.
-	\item Configure ACLs for each network protocol configured on the border router interfaces. 
+	\item Configure ACLs for each network protocol configured on the border router interfaces.
 	\item One ACL per protocol
 	\item One per direction
 	\item One per interface
 \end{itemize}
-\paragraph{} 
+\paragraph{}
 There are two types of Acces lists
 \begin{description}
 	\item[Standard ACL] Standard access lists use source IP addresses for matching packets.
 	\item[Extended ACL] Extended access lists use source and destination IP addresses for matching packets and optional protocol type information for finer granularity of control.
 \end{description}
-work Address Translation (NAT)}
+
+\subsection{Network Address Translation (NAT)}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
