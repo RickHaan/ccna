@@ -79,6 +79,9 @@
 % Less padding for lists
 \setlist[itemize]{noitemsep, topsep=0pt}
 
+% Less padding
+\setlength{\baselineskip}{0pt}
+
 % multicol parameters
 % These lengths are set only within the two main columns
 %\setlength{\columnseprule}{0.25pt}
@@ -251,7 +254,7 @@ In the simplest terms, IP Routing is the process of moving packets from its sour
 	\item[Outgoing interface]  Identifies the exit interface to use when forwarding packets to the destination network
 \end{description}
 \paragraph{}
-For remote connected entries the RIB looks like this:  
+For remote connected entries the RIB looks like this:
 \paragraph{}For remote connected entries the RIB looks like this:
  \begin{description}
 	\item[Route Source] Identifies how the route was learned
@@ -261,11 +264,11 @@ For remote connected entries the RIB looks like this:
 	\item[Outgoing interface]  Identifies the exit interface to use when forwarding packets to the destination network
 \end{description}
 \paragraph{}
-There are multiple Route Sources each letter has a different mean: 
+There are multiple Route Sources each letter has a different mean:
 \begin{description}
-	\item[S] Static Route 
+	\item[S] Static Route
 	\item[D] Dynamically learned using EIGRP
-	\item[O] Dynamically learned using OSPF 
+	\item[O] Dynamically learned using OSPF
 	\item[R] Dynamically learned using RIP
 	\item[L] Identifies that this is a local route
 	\item[C] Identifies a directly connected network
@@ -273,7 +276,7 @@ There are multiple Route Sources each letter has a different mean:
 \paragraph{}
 There are four types of static routes:
 \begin{description}
-	\item[Standard] Static Route are useful when connecting to a specific remote network  
+	\item[Standard] Static Route are useful when connecting to a specific remote network
 	\item[Default]  Static Route matches all packets and is used by the router if a package does not match a more specific route.
 	\item[Summary] Static Route to reduce the number of routing table entries, multiple static routes can be summarized if network is contigious and all use the same exit interface or next-hop ip
 	\item[Floating] static routes are static routes that are used to provide a backup path to a primary static or dynamic route, in the event of a link failure.To accomplish this, the floating static route is configured with a higher administrative distance than the primary route.
