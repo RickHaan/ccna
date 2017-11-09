@@ -88,7 +88,54 @@
 
 \subsection{Understanding Networks and their Building Blocks}
 \begin{textbox}{gray}{TODO}
-	This chapter is not yet complete!
+	\subsubsection{What is a network}
+	\paragraph{}
+	A network is nothing more than a collection of interconnected devices. A network is a tool to decrease cost, time,
+	and effort to increase productivity of people. For example by sharing files between offices a company can share data
+	between them is real-time. Networks reduces cost by sharing printers and other divices between multiple clients.
+	\paragraph{}
+	To connect to a network you'll need a \textbf{Network Interface Card (NIC)}, this connects to a network via a cable (e.g. Ethernet).
+	A NIC handles layer 1 and 2 (physical and network), the other layers are deligated to software layers in the layers above layer 2.
+	\subsubsection{Hubs and Switchers}
+	\paragraph{}
+	 To connect more than two devices with eachother you need to use a \textit{Hub} or a \textit{switch}.
+	\paragraph{}
+	A hub has two mayor disadvantages over a switch:
+	\begin{itemize}
+		\item A hub repeats the information of one host to all other connected hosts. Even if the message is only meant for one
+		other client.
+		\item A hub can process only one message at a time. If multiple clients send a message at the same time a collision occurs.
+		This collision is called a collision domain (all clients connected to one hub share the same collision domain)
+	\end{itemize}
+	\paragraph{}
+	Switches don't have a collision domain, which makes it a more efficient and faster device for routing messages on a network.
+	So you cloud say that a switch breaks up a collision domain.
+	\paragraph{}
+	Clients can communicate via three ways over the network.
+	\begin{itemize}
+		\item \textbf{Unicast} A host sends a message to one other host on the network.
+		\item \textbf{Broadcast} A host sends a message to all other hosts on the network.
+		\item \textbf{Multicast} A hsot sends a message to a couple of hosts on the network.
+	\end{itemize}
+	\paragraph{}
+	All hosts connected to a network are in the same \textbf{broadcast domain}, which means that a broadcast message will get picked
+	up by all connected hosts in the broadcast domain. Really large networks can have problems with to many broadcasts. A \textbf{router}
+	breaks up broadcast domains. Routers seperate networks from eachother and do not allow broadcasts between those networks.
+	\paragraph{}
+	Besides breaking up broadcast networks routers have other essential functions for making multiple interconnected networks possible:
+	\begin{itemize}
+		\item \textbf{Packet Switching} Just like a switch, routers switch packets between networks.
+		\item \textbf{Connect Networks} Routers allow connecting networks with eachother.
+		\item \textbf{Path Selection} Routers can learn about connected networks and pick the best path to send messages between networks.
+		\item \textbf{Packet Filtering} Routers can drop packets based on rules set by a network administrator.
+	\end{itemize}
+	\subsubsection{Networking Types}
+	\paragraph{}
+	There are two important types of networks: \textbf{Local Area Network (LAN)} and \textbf{Wide Area Network (WAN)}. LANs are smaller
+	networks most of the time, you'll find them in your home, at work, and at school. They cover a small area like a floor or a building.
+	They can transfer a large amount of data. WANs cover areas like cities, countries, or continents, they connect LANs across areas
+	they cover.
+	\textbf{Chapter not complete!}
 \end{textbox}
 
 \subsection{IP Addressing and Subnets}
