@@ -188,21 +188,31 @@ Each RIP enabled router will broadcast its routing table this way, therefore the
 \paragraph{}
 Internet and networks are becoming more complex and mission critical. Through the recent years there has been an intergration of network infrastructures.
 As a matter of fact, no computer system in the world can be completely secure no matter how good the security measures are. Probably the only way to fully secure a computer is to isolate it completely, restricting all physical and virtual access to it. Such a system would not be connected to any network and would probably be stored in a secured vault somewhere with no physical access
-\paragraph{}
+
 Cisco IOS software running on Cisco routers has several built-in security tools that can be used as part of a good overall security strategy. Probably the most important security tool in Cisco IOS software are access control lists (ACL)
+
 \begin{description}
-	\item[C] Confidentiality - prevents acces to sensative information
+	\item[C] Confidentiality - prevents acces to sensative information   
 	\item[I] Integritiy - prevents unauthorized modification of data
 	\item[A] Availability  - prevents the loss of acces to information
 \end{description}
-\paragraph{}
+
 In a medium to large enterprise, the typical secured network is built around a recipe of a perimeter router, a firewall device, and an internal router.
 \begin{description}
-	\item[Perimeter Router] Is the border between enterprise resources and the public network (internet)
-	\item[Firewall] Firewall
-	\item[Internal Router] Availability  - prevents the loss of acces to information
+	\item[Perimeter Router] is the border between enterprise resources and the public network (internet)  
+	\item[Firewall] Firewall allows sophisticated control of traffic flow.
+	\item[Internal Router]  provides addtional security by providing a point for further traffic control 
+	\item[DMZ] provides a buffer zone that seperates a trusted network from the untrusted network. 
 \end{description}
 
+Vulnerabilities, Threats and Exploits 
+\begin{description}
+	\item[Vulnerability] - a weakness in a system or design which can be exploited by a threat
+	\item[Threat] - threat is an external danger to the system have a vulnerability
+	\item[Exploit] said to exist when computer code is actually developed to take advtanges of a vulnerability.
+\end{description}
+
+\paragraph{}
 \subsection{Access Lists}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
