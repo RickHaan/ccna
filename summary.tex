@@ -5,6 +5,9 @@
 \usepackage[a4paper,landscape]{geometry}
 \usepackage{hyperref}
 \usepackage{tcolorbox}
+\usepackage{graphicx}
+
+\graphicspath{ {images/} }
 
 % This sets page margins to .5 inch if using letter paper, and to 1cm
 % if using A4 paper. (This probably isn't strictly necessary.)
@@ -95,6 +98,7 @@ between them is real-time. Networks reduces cost by sharing printers and other d
 \paragraph{}
 To connect to a network you'll need a \textbf{Network Interface Card (NIC)}, this connects to a network via a cable (e.g. Ethernet).
 A NIC handles layer 1 and 2 (physical and network), the other layers are deligated to software layers in the layers above layer 2.
+
 \subsubsection{Hubs and Switchers}
 \paragraph{}
  To connect more than two devices with eachother you need to use a \textit{Hub} or a \textit{switch}.
@@ -128,12 +132,55 @@ Besides breaking up broadcast networks routers have other essential functions fo
 	\item \textbf{Path Selection} Routers can learn about connected networks and pick the best path to send messages between networks.
 	\item \textbf{Packet Filtering} Routers can drop packets based on rules set by a network administrator.
 \end{itemize}
+
 \subsubsection{Networking Types}
 \paragraph{}
 There are two important types of networks: \textbf{Local Area Network (LAN)} and \textbf{Wide Area Network (WAN)}. LANs are smaller
 networks most of the time, you'll find them in your home, at work, and at school. They cover a small area like a floor or a building.
 They can transfer a large amount of data. WANs cover areas like cities, countries, or continents, they connect LANs across areas
 they cover.
+
+\subsubsection{OSI Reference Model}
+\paragraph{}
+The OSI layer
+\includegraphics{osi_layer}
+
+Encapsulation of the different layers. Note that layer 2 encapsulate the layer packet on both sides.
+\includegraphics{data_encapsulation}
+
+\subsubsection{TCP/IP Model}
+\paragraph{}
+The TCP/IP Model is a stripped down version of the OSI Model.
+
+\includegraphics{TCP_IP_model}
+
+\subsubsection{Transport Control Protocol (TCP)}
+\paragraph{}
+TCP is a layer 3 protocol and is encapsulated by layer (Internet) and encapsulates the application layer. The protocol
+uses a three-way handshake (SYN, SYN ACK, SYN ACK). After the handshake it breaks down the data of the application layer
+into segments and ads its own header at the front of the fragement and sends it to layer 1 (Network Access).
+\paragraph{}
+The size of a TCP packet is based on the MTU (maximum transmission unit), a packet can never be bigger than the MTU
+so most of the time the data of the application layer will be broken up into segments.
+\paragraph{}
+TCP also handles flow control, how fast a host can send data to the client. This is done based on a \textit{window}
+this window scales up and down depending on the how full the window is. If a host doesn't get enough ACK responses
+it will decrease the window size, it will increase the window size if it continiously receives ACK responses.
+\paragraph{}
+If the host doesn't get an ACK back it will resend the message that have not been ACKed. This can be done because 
+eacht TCP header contains a \textit{sequence number} so the host can see which packets have been ACKed. This sequence number
+is also used too reorder the packages in the right order to sent it to the application layer.
+
+\subsubsection{UDP}
+\paragraph{}
+UDP is like TCP a protocol on the Internet layer, that is the only thing they have in common. UDP doesn't have knowledge of 
+connections or does anything to make sure the package is send and received. The advantage of UDP over TCP is that is doesn't
+have the overhead of TCP (retransmitting packages, keeping track of connections etc.).
+
+\subsubsection{IP (IPv4 only)}
+\paragraph{}
+This is the backbone of the internet, it allows hosts to connect to eachother. Routers uses IP addresses to route IP packets from
+network to network.
 
 \subsection{IP Addressing and Subnets}
 \begin{textbox}{gray}{TODO}
