@@ -218,6 +218,16 @@ network to network.
 \paragraph{}An ethernet address is 48 bits long. The first 24 bits are for the \textbf{Organizationally Unique Identifier (OUI)}, the last 24 bits
 is unique to that specific NIC.
 \subsection{IP Addressing and Subnets}
+\paragraph{}
+Starting with IPv4. IPv4 uses a 32 bit adress which is shown as a decimal address: \textit{255.255.255.255} the binary representation of this
+address is: \textit{11111111.11111111.11111111.11111111}. Routers route packages based on IP address and subnet mask,
+the subnet mask can be anything between /0 and /32. The subnet mask uses tha same notation as an IP address.
+In case of an /23 prefix the subnet mask is \textit{255.255.254.0} in binary this is \textit{11111111.11111111.11111110.00000000}.
+The router looks at every \textit{1} in the subnet mask to determine the route how to route the IP address. In case the IPv4 address
+\textit{152.67.218.44 = 10011000.01000011.1101101 0.00101100} uses this subnet mask, the router routes all trafic that has
+an equal first 23 bits to the same destination. In this case it means 512 addresses, ranging from
+\textit{152.67.218.0 = 10011000.01000011.1101101 0.00000000} till \textit{152.67.219.255 = 10011000.01000011.1101101 1.11111111}.
+Only 510 of these addresses are usable. Because the first address is the network address and the last address is used as broadcast address.
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
