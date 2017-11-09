@@ -224,10 +224,37 @@ RIP uses 4 different timers:
 \end{description}
 
 \subsubsection{Enhanced Interior Gateway Routing Protocol (EIGRP)}
+\paragraph{}
+EIGRP is a Cisco Proprietary classless routing protocol. It takes various features of \textit{distance vecor} and \textit{link state} protocols to overcome the disadvantages of a distance vector protocol.
+\paragraph{}
+EIGRP uses the following features of a \textit{distance vector protocol}:
+\begin{itemize}
+	\item Hop count limit of 100 by default (\textit{up to 255}).
+	\item Uses \textit{routing-by-rumor} mechanism.
+	\item Implements loop avoidance techniques.
+\end{itemize}
+From a \textit{link state protocol} it inherits:
+\begin{itemize}
+	\item Neighbour discovery and periodically checking their state.
+	\item Only sends updates when changes occur.
+\end{itemize}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
+
 \subsubsection{Open Shortest Path First (OSPF)}
+\paragraph{}
+OSPF is a \textit{link state protocol}. Besides it is also an open standard protocol, which allows OSPF to be used in a multivendor network.
+Compared to EIGRP, OSPF is a more complex protocol. The features of OSPF are:
+\begin{itemize}
+	\item Works on the concept of Areas and Autonomous systems.
+	\item Highly scalable.
+	\item Support VLSM/CIDR and dis-contiguos networks.
+	\item Does not have a hop count limit.
+	\item Works in multivender environments.
+	\item Minimizes updates betweens neighbors.
+	\item And many more features...
+\end{itemize}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
