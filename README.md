@@ -7,6 +7,7 @@ PNG images of the CCNA summary:
 ![](summary-thumb-0.png)
 ![](summary-thumb-1.png)
 ![](summary-thumb-2.png)
+![](summary-thumb-3.png)
 
 ## Download
 

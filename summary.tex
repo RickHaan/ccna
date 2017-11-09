@@ -142,17 +142,16 @@ they cover.
 
 \subsubsection{OSI Reference Model}
 \paragraph{}
-The OSI layer
-\includegraphics{osi_layer}
+The OSI layer: \\
+\includegraphics[width=7.5cm]{osi_layer}
 
-Encapsulation of the different layers. Note that layer 2 encapsulate the layer packet on both sides.
-\includegraphics{data_encapsulation}
+Encapsulation of the different layers. Note that layer 2 encapsulate the layer packet on both sides. \\
+\includegraphics[width=7.5cm]{data_encapsulation}
 
 \subsubsection{TCP/IP Model}
 \paragraph{}
-The TCP/IP Model is a stripped down version of the OSI Model.
-
-\includegraphics{TCP_IP_model}
+The TCP/IP Model is a stripped down version of the OSI Model. \\
+\includegraphics[width=5cm]{TCP_IP_model}
 
 \subsubsection{Transport Control Protocol (TCP)}
 \paragraph{}
@@ -167,13 +166,13 @@ TCP also handles flow control, how fast a host can send data to the client. This
 this window scales up and down depending on the how full the window is. If a host doesn't get enough ACK responses
 it will decrease the window size, it will increase the window size if it continiously receives ACK responses.
 \paragraph{}
-If the host doesn't get an ACK back it will resend the message that have not been ACKed. This can be done because 
+If the host doesn't get an ACK back it will resend the message that have not been ACKed. This can be done because
 eacht TCP header contains a \textit{sequence number} so the host can see which packets have been ACKed. This sequence number
 is also used too reorder the packages in the right order to sent it to the application layer.
 
 \subsubsection{UDP}
 \paragraph{}
-UDP is like TCP a protocol on the Internet layer, that is the only thing they have in common. UDP doesn't have knowledge of 
+UDP is like TCP a protocol on the Internet layer, that is the only thing they have in common. UDP doesn't have knowledge of
 connections or does anything to make sure the package is send and received. The advantage of UDP over TCP is that is doesn't
 have the overhead of TCP (retransmitting packages, keeping track of connections etc.).
 
