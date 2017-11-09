@@ -229,6 +229,54 @@ is unique to that specific NIC.
 \end{textbox}
 
 \subsection{Introduction to IP Routing}
+\paragraph{}
+In the simplest terms, IP Routing is the process of moving packets from its source to its destination across internetworks. To be able to route packets, a router must know at a minimum the following:
+\begin{itemize}
+
+    \item Destination address
+    \item Neighbor routers from which it can learn about remote networks
+    \item Possible routes to all remote networks
+    \item The best route to each remote network
+    \item Be able to maintain and verify routing information
+\end{itemize}
+\paragraph{}
+The following steps are taking place when a router routes a packet. Please note that this is simplified 
+S = source 
+D = Destination
+M = MAC
+A = ARP 
+G = default gateway
+R = router 
+\begin{description}
+	\item[Step 1] Determine on same network by doing AND operation on S and D
+	\item[Step 2] if D is the same network use ARP-table for the MAC if not use G 
+	\item[Step 3] if package not the same network use G 
+	\item[Step 4] R examines the M 
+	\item[Step 5] if M is in the routing table sends frame towards corresponding interface 
+	\item[Step 6] if R does not have a match look for G 
+	\item[Step 7] if there is no G present drop package 
+\end{description}
+\paragraph{}
+As you would have realized by now, the essence of routing is how the router learns about the remote networks. Routing information is stored in the routing table also called the Routing Information Base (RIB). The RIB consists of routes to destination networks.
+\paragraph{}
+for direct connected entries the RIB looks liks this:
+ \begin{description}
+	\item[Route Source] Identifies how the route was learned
+	\item[Destination network]The address of the remote network and how that network is connected
+	\item[Outgoing interface]  Identifies the exit interface to use when forwarding packets to the destination network
+\end{description}
+\paragraph{}
+For remote connected entries the RIB looks like this:  
+ \begin{description}
+	\item[Route Source] Identifies how the route was learned
+	\item[Destination network]The address of the remote network and how that network is connected
+	\item[Administrative Distance] Identifies the trustworthiness of the route source
+	\item[Metric] identifies the value assigne to reach the remote network. Lower values indicate preferred routes
+	\item[Outgoing interface]  Identifies the exit interface to use when forwarding packets to the destination network
+\end{description}
+
+
+
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
