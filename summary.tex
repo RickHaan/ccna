@@ -160,6 +160,14 @@ RIPv1 was defined as a \textit{classful} protocol. Therefore it does not adverti
 When a router starts up, it will automatically add the connected networks to its routing table, denoting them with a \verb!C!.
 If RIP is enabled, the router broadcasts its routing table. Neighbouring routers router with RIP enabled will receive the broadcast update and add the routes to their own routing tables.
 Each RIP enabled router will broadcast its routing table this way, therefore the routing table will converge accross the network.
+\paragraph{}
+RIP has the following characteristics:
+\begin{itemize}
+	\item RIP sends out its \textit{entire} routing table every 30 seconds.
+	\item Has a maximum hop count limit of 15.
+	\item Implements split horizon, route poisoning and holddown timers to prevent routing loops.
+	\item High convergence time.
+\end{itemize}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
@@ -192,20 +200,20 @@ As a matter of fact, no computer system in the world can be completely secure no
 Cisco IOS software running on Cisco routers has several built-in security tools that can be used as part of a good overall security strategy. Probably the most important security tool in Cisco IOS software are access control lists (ACL)
 
 \begin{description}
-	\item[C] Confidentiality - prevents acces to sensative information   
+	\item[C] Confidentiality - prevents acces to sensative information
 	\item[I] Integritiy - prevents unauthorized modification of data
 	\item[A] Availability  - prevents the loss of acces to information
 \end{description}
 
 In a medium to large enterprise, the typical secured network is built around a recipe of a perimeter router, a firewall device, and an internal router.
 \begin{description}
-	\item[Perimeter Router] is the border between enterprise resources and the public network (internet)  
+	\item[Perimeter Router] is the border between enterprise resources and the public network (internet)
 	\item[Firewall] Firewall allows sophisticated control of traffic flow.
-	\item[Internal Router]  provides addtional security by providing a point for further traffic control 
-	\item[DMZ] provides a buffer zone that seperates a trusted network from the untrusted network. 
+	\item[Internal Router]  provides addtional security by providing a point for further traffic control
+	\item[DMZ] provides a buffer zone that seperates a trusted network from the untrusted network.
 \end{description}
 
-Vulnerabilities, Threats and Exploits 
+Vulnerabilities, Threats and Exploits
 \begin{description}
 	\item[Vulnerability] - a weakness in a system or design which can be exploited by a threat
 	\item[Threat] - threat is an external danger to the system have a vulnerability
