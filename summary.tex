@@ -295,6 +295,18 @@ There are 5 types of VLAN:
 	\item[Management VLAN] A management VLAN is any VLAN configured to access the management capabilities of a switch. VLAN 1 is the management VLAN by default
 	\item[Voice VLAN] A separate VLAN is needed to support Voice over IP (VoIP). Needs: Assured bandwidth, Transmission,
 \end{description}
+\paragraph{}
+VLAN's wouldnt be useful without trunks. A VLAN trunk extends VLANs across an entire network. Cisco supports IEEE 802.1Q for coordinating trunks on Fast Ethernet, Gigabit Ethernet, and 10-Gigabit Ethernet interfaces. 
+\textit{switchport access vlan 10 } assigns a VLAN to an interface port. 
+
+\subsection{VLAN Routing}
+\paragraph
+Without a router VLAN cannot be routed through the network regardless of the device used, the process of forwarding network traffic from one VLAN to another VLAN using routing is known as inter-VLAN routing. There are three types. 
+\begin{description}
+	\item[Legacy Inter-VLAN routing] performed by using different physical router interfaces to different physical switch ports. Needs a cable for each VLAN. switch port must be in acces mode  
+	\item[Router-on-a-stick] ‘Router-on-a-stick’ is a type of router configuration in which a single physical interface routes traffic between multiple VLANs on a network. Makes use of subinterfaces. switch interface must be in trunk mode.  
+	\item[Layer 3 switching using SVIs] Is out of scope for CCNA 
+\end{description}
 
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
