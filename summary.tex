@@ -308,10 +308,6 @@ Without a router VLAN cannot be routed through the network regardless of the dev
 	\item[Layer 3 switching using SVIs] Is out of scope for CCNA 
 \end{description}
 
-\begin{textbox}{gray}{TODO}
-	This chapter is not yet complete!
-\end{textbox}
-
 \subsection{Network Security}
 \subsubsection{Security Introduction}
 \paragraph{}
@@ -376,11 +372,48 @@ There are three Secure MAC Address Types
 \end{description}
 
 \subsection{Access Lists}
-\begin{textbox}{gray}{TODO}
-	This chapter is not yet complete!
-\end{textbox}
-
-\subsection{Network Address Translation (NAT)}
+\paragraph{}
+An ACL is a series of IOS commands that control whether a router forwards or drops packets based on information 
+when configured, ACL perform the following tasks
+\begin{itemize}
+	\item Limit network traffic to increase network performance
+	\item Provide traffic flow control
+	\item provide a basic level of security for network acces
+	\item provide a basic level of security for network
+	\item filter traffic
+	\item Screen hosts to permit or deny acces 
+\end{itemize}
+\paragraph{}
+Packet filtering works at Layer 3 and 4. The last statement of an ACL is always an implicit deny. This statement is automatically inserted at the end of each ACL even though it is not physically present. ACLs can be configured to apply to inbound traffic and outbound traffic.
+\begin{description}
+	\item[Inbound ACL] incoming packets are processed before they are routed to the outbound interface. An inbound ACL is efficient because it saves the overhead of routing lookups
+	\item[Outbound ACL] incoming packets are routed to the outbound interface, and then they are processed through the outbound ACL
+\end{description}
+\paragraph{}
+A wildcard mask is a string of 32 binary digits used by the router to determine which bits of the address to examine for a match. Also note that an ACL mask is reversed meaning. 
+example:
+\begin{itemize}
+	\item 255.255.255.255 == 0.0.0.0	
+	\item 255.255.255.252 == 0.0.0.3
+	\item 255.255.255.248 == 0.0.0.7
+\paragraph{}
+Guide lines for creating ACL's:
+\begin{itemize}
+	\item Use ACL in Firewalls between your internal network 
+	\item Use ACL on a router positioned between two part of your network
+	\item Use ACL on border routers, that is, routers situated at the edges of your networks.
+	\item Configure ACLs for each network protocol configured on the border router interfaces. 
+	\item One ACL per protocol
+	\item One per direction
+	\item One per interface
+\end{itemize}
+\paragraph{} 
+There are two types of Acces lists
+\begin{description}
+	\item[Standard ACL] Standard access lists use source IP addresses for matching packets.
+	\item[Extended ACL] Extended access lists use source and destination IP addresses for matching packets and optional protocol type information for finer granularity of control.
+\end{description}
+work Address Translation (NAT)}
 \begin{textbox}{gray}{TODO}
 	This chapter is not yet complete!
 \end{textbox}
